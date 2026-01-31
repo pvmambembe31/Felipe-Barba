@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-links a');
 
     if (menuToggle && navLinks) {
+        // Abrir e fechar menu
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
 
@@ -47,36 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. SPOTIFY FLUTUANTE ---
-    const spotifyBtn = document.getElementById('toggle-spotify');
-    const spotifyBox = document.getElementById('spotify-box');
-    const minimizeBtn = document.getElementById('minimize-spotify');
-
-    if (spotifyBtn && spotifyBox) {
-
-        function togglePlayer() {
-            spotifyBox.classList.toggle('active');
-
-            // Troca o ícone do botão
-            const icon = spotifyBtn.querySelector('i');
-            if (spotifyBox.classList.contains('active')) {
-                icon.classList.remove('fa-spotify');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-spotify');
-            }
-        }
-
-        spotifyBtn.addEventListener('click', togglePlayer);
-
-        if (minimizeBtn) {
-            minimizeBtn.addEventListener('click', () => {
-                spotifyBox.classList.remove('active');
-                const icon = spotifyBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-spotify');
-            });
-        }
-    }
+    // Nota: A lógica do Spotify foi removida pois agora é um link direto no HTML.
 });
