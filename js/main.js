@@ -1,22 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Menu Mobile Toggle
+
+    // --- 1. MENU MOBILE ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
 
-    if(menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Dica: Adicione estilos CSS para '.nav-links.active' para mostrar o menu no mobile
+
+            // Ícone vira X
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fechar menu ao clicar no link
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     }
 
-    // 2. Smooth Scroll para Links Internos
+    // --- 2. SMOOTH SCROLL (Rolagem Suave) ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
+            if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -25,17 +47,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Efeito Parallax simples na imagem Hero (Opcional - Extra "Pro")
-    const heroImg = document.querySelector('.hero-image img');
-    
-    document.addEventListener('mousemove', (e) => {
-        if(window.innerWidth > 768) {
-            const x = (window.innerWidth - e.pageX * 2) / 90;
-            const y = (window.innerHeight - e.pageY * 2) / 90;
-            
-            if(heroImg) {
-                heroImg.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    // --- 3. SPOTIFY FLUTUANTE ---
+    const spotifyBtn = document.getElementById('toggle-spotify');
+    const spotifyBox = document.getElementById('spotify-box');
+    const minimizeBtn = document.getElementById('minimize-spotify');
+
+    if (spotifyBtn && spotifyBox) {
+
+        function togglePlayer() {
+            spotifyBox.classList.toggle('active');
+
+            // Troca o ícone do botão
+            const icon = spotifyBtn.querySelector('i');
+            if (spotifyBox.classList.contains('active')) {
+                icon.classList.remove('fa-spotify');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-spotify');
             }
         }
-    });
+
+        spotifyBtn.addEventListener('click', togglePlayer);
+
+        if (minimizeBtn) {
+            minimizeBtn.addEventListener('click', () => {
+                spotifyBox.classList.remove('active');
+                const icon = spotifyBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-spotify');
+            });
+        }
+    }
 });
