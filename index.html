@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@500&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -32,9 +33,7 @@
                 <li><a href="#aulas">Cursos</a></li>
                 <li><a href="#musica">Mídia</a></li>
                 <li><a href="https://wa.me/5521993577662?text=Oi,%20vi%20seu%20site%20e%20queria%20mais%20informa%C3%A7%C3%B5es"
-                        target="_blank"
-                        style="color:var(--primary); border:1px solid var(--primary); padding:8px 15px; border-radius:20px;">Contato</a>
-                </li>
+                        target="_blank" class="btn-nav-highlight">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -56,7 +55,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/felipe-profile.jpg" alt="Felipe Barba">
+                <img src="assets/images/felipe-profile.jpg" alt="Felipe Barba" class="floating-img">
             </div>
         </div>
     </section>
@@ -64,12 +63,13 @@
     <section id="sobre" class="section-padding">
         <div class="container">
             <h2 class="section-title">Quem é <span>Felipe Barba</span>?</h2>
-            <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">
+            <p class="bio-text">
                 Músico multi-instrumentista com vasta experiência na noite carioca. Do peso do Rock à cadência do Samba,
                 trago versatilidade nos palcos e uma didática única nas salas de aula.
+                Seja para animar sua festa ou te ensinar a tocar aquela música favorita, a dedicação é total.
             </p>
-            <div style="text-align:center;">
-                <a href="https://tr.ee/Oe2i28_Ozz" target="_blank" class="btn btn-primary">
+            <div style="text-align:center; margin-top: 2rem;">
+                <a href="https://tr.ee/Oe2i28_Ozz" target="_blank" class="btn btn-outline">
                     <i class="fas fa-video"></i> Ver Bastidores (Ao Vivo)
                 </a>
             </div>
@@ -78,7 +78,7 @@
 
     <section id="aulas" class="section-dark">
         <div class="container">
-            <h2 class="section-title">Escolha seu Plano</h2>
+            <h2 class="section-title">Aprenda Violão</h2>
             <div class="cards-container">
 
                 <div class="product-card">
@@ -90,13 +90,11 @@
                         <li><i class="fas fa-check"></i> 1 Tira-dúvidas semanal</li>
                     </ul>
                     <a href="https://wa.me/5521993577662?text=Oi,%20tenho%20interesse%20no%20plano%20START%20NO%20VIOL%C3%83O"
-                        target="_blank" class="btn btn-whatsapp" style="width:100%">Eu Quero</a>
+                        target="_blank" class="btn btn-whatsapp full-width">Eu Quero</a>
                 </div>
 
                 <div class="product-card highlight-card">
-                    <div
-                        style="position:absolute; top:0; right:0; background:var(--primary); color:#000; padding:5px 10px; font-weight:bold; font-size:0.8rem;">
-                        POPULAR</div>
+                    <div class="badge">POPULAR</div>
                     <h3>Músico Completo</h3>
                     <div class="price-tag">R$ 149,90<span>/mês</span></div>
                     <ul class="features-list">
@@ -106,8 +104,7 @@
                         <li><i class="fas fa-check"></i> Grupo VIP de Alunos</li>
                     </ul>
                     <a href="https://wa.me/5521993577662?text=Oi,%20tenho%20interesse%20no%20plano%20M%C3%9ASICO%20COMPLETO"
-                        target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">Começar
-                        Agora</a>
+                        target="_blank" class="btn btn-primary full-width">Começar Agora</a>
                 </div>
 
                 <div class="product-card">
@@ -119,7 +116,7 @@
                         <li><i class="fas fa-check"></i> Preparação para Shows</li>
                     </ul>
                     <a href="https://wa.me/5521993577662?text=Oi,%20tenho%20interesse%20na%20MENTORIA%20VIP"
-                        target="_blank" class="btn btn-whatsapp" style="width:100%">Consultar</a>
+                        target="_blank" class="btn btn-whatsapp full-width">Consultar</a>
                 </div>
 
             </div>
@@ -131,20 +128,19 @@
             <h2 class="section-title">Siga nas Redes</h2>
             <div class="media-grid">
 
-                <div style="background:#222; padding:2rem; border-radius:15px; text-align:center;">
-                    <i class="fab fa-instagram" style="font-size:3rem; color:#E1306C; margin-bottom:1rem;"></i>
+                <div class="media-box">
+                    <i class="fab fa-instagram icon-insta"></i>
                     <h3>@felipe.barba.musico</h3>
-                    <p style="margin-bottom:1.5rem; color:#aaa;">Acompanhe shows, stories e dicas diárias.</p>
-                    <a href="https://instagram.com/felipe.barba.musico" target="_blank" class="btn btn-outline"
-                        style="border:1px solid #fff;">Ver Perfil</a>
+                    <p>Acompanhe shows, stories e dicas diárias.</p>
+                    <a href="https://instagram.com/felipe.barba.musico" target="_blank" class="btn btn-outline">Ver
+                        Perfil</a>
                 </div>
 
-                <div style="background:#222; padding:2rem; border-radius:15px; text-align:center;">
-                    <i class="fab fa-youtube" style="font-size:3rem; color:#ff0000; margin-bottom:1rem;"></i>
+                <div class="media-box">
+                    <i class="fab fa-youtube icon-youtube"></i>
                     <h3>Canal Oficial</h3>
-                    <p style="margin-bottom:1.5rem; color:#aaa;">Vídeos das apresentações e aulas gratuitas.</p>
-                    <a href="https://tr.ee/Oe2i28_Ozz" target="_blank" class="btn btn-outline"
-                        style="border:1px solid #fff;">Assistir</a>
+                    <p>Vídeos das apresentações e aulas gratuitas.</p>
+                    <a href="https://tr.ee/Oe2i28_Ozz" target="_blank" class="btn btn-outline">Assistir</a>
                 </div>
 
             </div>
@@ -159,7 +155,7 @@
                 <a href="https://open.spotify.com/intl-pt/artist/5bYROTkbrSQkL0A9vDagAZ?si=qNgwIvw1SHOXhMyO84fa2Q&utm_medium=share&utm_source=linktree&nd=1&dlsi=cf4a8c89e4aa4eaf"
                     target="_blank"><i class="fab fa-spotify"></i></a>
             </div>
-            <p style="font-size:0.8rem; color:#555;">© 2026 Felipe Barba. Todos os direitos reservados.</p>
+            <p class="copyright">© 2026 Felipe Barba. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -167,6 +163,25 @@
         class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <div class="spotify-wrapper">
+        <div class="spotify-player-container" id="spotify-box">
+            <div class="spotify-header">
+                <span>Trilha Sonora</span>
+                <button id="minimize-spotify"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/artist/06HL4z0CvFAXYu66y4ZMXP?utm_source=generator" width="100%"
+                height="152" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+
+        <button id="toggle-spotify" class="spotify-float-btn">
+            <i class="fab fa-spotify"></i>
+            <span class="pulse-animation"></span>
+        </button>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
