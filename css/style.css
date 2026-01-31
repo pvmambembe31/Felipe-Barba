@@ -30,7 +30,6 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    /* Evita rolagem lateral no mobile */
 }
 
 a {
@@ -99,9 +98,20 @@ img {
     color: var(--primary);
 }
 
+.btn-nav-highlight {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+.btn-nav-highlight:hover {
+    background: var(--primary);
+    color: #000;
+}
+
 .menu-toggle {
     display: none;
-    /* Escondido no Desktop */
     font-size: 1.8rem;
     cursor: pointer;
     color: var(--text-light);
@@ -110,11 +120,9 @@ img {
 /* --- HERO SECTION --- */
 .hero {
     min-height: 100vh;
-    /* Ocupa tela toda */
     display: flex;
     align-items: center;
     padding-top: 80px;
-    /* Espaço da navbar */
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
 
@@ -124,7 +132,6 @@ img {
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
-    /* Permite quebrar linha no mobile */
 }
 
 .hero-content {
@@ -136,7 +143,6 @@ img {
 .hero h1 {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    /* Texto responsivo */
     line-height: 1.1;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -165,6 +171,8 @@ img {
     justify-content: center;
     gap: 10px;
     font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -187,6 +195,23 @@ img {
     transform: translateY(-3px);
 }
 
+.btn-outline {
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.full-width {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+}
+
 .hero-image {
     flex: 1;
     min-width: 300px;
@@ -195,7 +220,7 @@ img {
     margin-top: 2rem;
 }
 
-.hero-image img {
+.floating-img {
     border-radius: 20px;
     box-shadow: 15px 15px 0px var(--secondary);
     max-width: 400px;
@@ -239,6 +264,14 @@ img {
     color: var(--primary);
 }
 
+.bio-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
 /* --- CARDS & PREÇOS --- */
 .cards-container {
     display: grid;
@@ -260,13 +293,25 @@ img {
 .product-card:hover {
     border-color: var(--primary);
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-card {
     border: 1px solid var(--primary);
     background: linear-gradient(145deg, #1E1E1E, #252525);
     transform: scale(1.05);
-    /* Destaque no Desktop */
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--primary);
+    color: var(--bg-dark);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
 }
 
 .price-tag {
@@ -283,21 +328,93 @@ img {
 }
 
 .features-list {
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
     text-align: left;
+    flex-grow: 1;
 }
 
 .features-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: #ccc;
+    display: flex;
+    align-items: center;
 }
 
 .features-list li i {
     color: var(--primary);
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
-/* --- WHATSAPP FLUTUANTE --- */
+/* --- MÍDIA --- */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.media-box {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.media-box i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.icon-insta {
+    color: #E1306C;
+}
+
+.icon-youtube {
+    color: #ff0000;
+}
+
+.media-box h3 {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.media-box p {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+    color: #fff;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* --- WHATSAPP FLUTUANTE (DIREITA) --- */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -322,34 +439,105 @@ img {
     background-color: #1ebe57;
 }
 
-/* --- MEDIA & FOOTER --- */
-.media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-footer {
-    text-align: center;
-    padding: 3rem 0;
-    background: #000;
-    border-top: 1px solid #222;
-}
-
-.social-links {
-    margin: 1.5rem 0;
+/* --- SPOTIFY FLUTUANTE (ESQUERDA) --- */
+.spotify-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2000;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.social-links a {
-    font-size: 1.5rem;
+.spotify-float-btn {
+    background-color: #1DB954;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2002;
 }
 
-.social-links a:hover {
-    color: var(--primary);
+.spotify-float-btn:hover {
+    transform: scale(1.1);
+    background-color: #1ed760;
+}
+
+.pulse-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #1DB954;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.spotify-player-container {
+    background: #000;
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+}
+
+.spotify-player-container.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.spotify-header {
+    background: #121212;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.spotify-header span {
+    font-size: 0.8rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.spotify-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* --- RESPONSIVIDADE (MOBILE) --- */
@@ -357,8 +545,6 @@ footer {
     .menu-toggle {
         display: block;
     }
-
-    /* Mostra o ícone hamburguer */
 
     .nav-links {
         position: fixed;
@@ -377,8 +563,6 @@ footer {
     .nav-links.active {
         right: 0;
     }
-
-    /* Faz o menu aparecer */
 
     .nav-links li {
         margin: 1.5rem 0;
@@ -406,5 +590,21 @@ footer {
         transform: scale(1);
     }
 
-    /* Remove zoom exagerado no mobile */
+    /* Ajuste para não sobrepor botões no mobile */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .spotify-wrapper {
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .spotify-player-container {
+        width: 260px;
+    }
 }
