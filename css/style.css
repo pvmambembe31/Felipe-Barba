@@ -414,6 +414,10 @@ footer {
     color: #555;
 }
 
+.copyright strong {
+    color: var(--primary);
+}
+
 /* --- WHATSAPP FLUTUANTE (DIREITA) --- */
 .whatsapp-float {
     position: fixed;
@@ -495,51 +499,6 @@ footer {
     }
 }
 
-.spotify-player-container {
-    background: #000;
-    width: 300px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    border: 1px solid #333;
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: absolute;
-    bottom: 60px;
-    left: 0;
-}
-
-.spotify-player-container.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: all;
-}
-
-.spotify-header {
-    background: #121212;
-    padding: 8px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-}
-
-.spotify-header span {
-    font-size: 0.8rem;
-    color: #ccc;
-    font-weight: bold;
-}
-
-.spotify-header button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
 /* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -602,9 +561,5 @@ footer {
     .spotify-wrapper {
         bottom: 15px;
         left: 15px;
-    }
-
-    .spotify-player-container {
-        width: 260px;
     }
 }
